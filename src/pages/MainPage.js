@@ -24,7 +24,6 @@ class MainPage extends React.Component {
   }
 
   addNewCard(type, title, desc) {
-    console.log(type)
     let tempList = this.state.lists
     for (let i = 0; i < tempList.length; i++) {
       if (tempList[i].type === type) {
@@ -38,7 +37,6 @@ class MainPage extends React.Component {
   }
 
   deleteListItem(type, key) {
-    console.log(key)
     let tempList = this.state.lists
     for (let i = 0; i < tempList.length; i++) {
       if (tempList[i].type === type) {
@@ -54,12 +52,25 @@ class MainPage extends React.Component {
   }
 
   changeCardStatus(type, key) {
-    for (let i = 0; i < this.state.lists.length; i++) {
-      if (this.state.lists[i].type === type) {
-
+    let changeTo = type ==="To-Do" ? "Completed" : "To-Do"
+    let tempList = this.state.lists
+    let tempItem
+    for (let i = 0; i < tempList.length; i++) {
+      if (tempList[i].type === type) {
+        tempItem = tempList[i].items[key]
+        tempList[i].items.splice(key, 1)
       }
     }
-    console.log("Test props")
+    for (let i = 0; i < tempList.length; i++) {
+      if (tempList[i].type === changeTo) {
+        tempList[i].items.push(tempItem)
+      }
+    }
+    this.setState({
+      ...this.state,
+      lists: tempList
+    })
+    // console.log("Test props")
   }
 
 

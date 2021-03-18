@@ -18,10 +18,12 @@ class TodoCard extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.deleteCard = this.deleteCard.bind(this)
+    this.changeStatus = this.changeStatus.bind(this)
   }
 
   changeStatus() {
-
+    console.log("changeStatus")
+    this.props.changeCardStatus(this.state.groupTitle, this.state.listId)
   }  
 
   handleInputChange(event) {
@@ -66,7 +68,6 @@ class TodoCard extends React.Component {
 
   componentDidMount() {
     this.generateBlankCard()
-    console.log(this.state.groupTitle)
   }
 
   render() {
@@ -86,7 +87,7 @@ class TodoCard extends React.Component {
     if(!this.state.newCard) {
       todoCardButtons = (
         <div className="todo-icon-container">
-          <i className="fas fa-check todo-icon todo-checkmark" onClick={this.props.changeCardStatus} ></i>
+          <i className="fas fa-check todo-icon todo-checkmark" onClick={this.changeStatus} ></i>
           <i className="fas fa-trash-alt todo-icon todo-trashcan" onClick={this.deleteCard}></i>
         </div>
       )
