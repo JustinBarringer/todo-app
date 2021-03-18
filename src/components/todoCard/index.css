@@ -1,0 +1,52 @@
+.todo-card {
+  display: flex;
+  box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+  margin: 10px 5px 5px 0px;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.todo-card-title {
+  font-size: 20px;
+}
+
+.todo-card-description {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.todo-icon-container {
+  display: flex;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 60px;
+  justify-content: space-around;
+}
+
+.todo-icon {
+  cursor: pointer;
+}
+
+.todo-checkmark:hover {
+  color: green;
+}
+
+.todo-trashcan:hover {
+  color: red;
+}
+
+.todo-card-input {
+  margin-top: 10px;
+}
+
+.new-card-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.new-card-button {
+  width: 80px;
+}

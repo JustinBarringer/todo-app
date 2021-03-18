@@ -1,0 +1,12 @@
+.navbar-container {
+  display: flex;
+  background-color: darkcyan;
+  min-height: 60px;
+  margin-bottom: 10px;
+}
+
+.navbar-title {
+  color: white;
+  font-size: 30px;
+  margin: auto auto auto auto;
+}
